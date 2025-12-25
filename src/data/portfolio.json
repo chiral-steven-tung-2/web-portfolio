@@ -1,0 +1,233 @@
+{
+  "personal": {
+    "name": "Steven Tung",
+    "school": "Stony Brook University",
+    "zipCode": "11357",
+    "profilePicture": "/profile.png",
+    "briefDescription": "Computer Science student passionate about building innovative solutions. Pursuing BS/MS at Stony Brook University with experience in cloud and full-stack development.",
+    "aboutMe": "I'm a passionate computer science student with a strong foundation in software development and distributed systems. Currently pursuing both a Bachelor's and Master's degree in Computer Science at Stony Brook University, I thrive on solving complex problems and building scalable solutions.",
+    "interests": [
+      "Distributed Systems",
+      "Full-Stack Development",
+      "Cloud Computing"
+    ],
+    "socialLinks": [
+      {
+        "name": "LinkedIn",
+        "url": "https://www.linkedin.com/in/steventung/",
+        "icon": "linkedin"
+      },
+      {
+        "name": "GitHub",
+        "url": "https://github.com/yourusername",
+        "icon": "github"
+      },
+      {
+        "name": "Email",
+        "url": "mailto:steventung666@gmail.com",
+        "icon": "email"
+      }
+    ]
+  },
+  "projects": [
+    {
+      "id": 1,
+      "title": "Distributed Banking System",
+      "description": "Created a fault-tolerant distributed banking system using Two-Phase Commit and Paxos consensus algorithm to ensure atomic transactions and data consistency across multiple clusters. As a bonus, also implemented a byzantine fault-tolerant project using PBFT.",
+      "technologies": ["Python", "SQLite", "gRPC"],
+      "repository": "https://github.com/yourusername/portfolio",
+      "date": "2025",
+      "highlights": [
+        "Implemented a fault-tolerant distributed banking system, integrating Two-Phase Commit (2PC) for atomic transaction processing and Paxos consensus algorithm for coordinating operations across clusters, ensuring data consistency",
+        "Developed multi-cluster sharding with multiprocessing and gRPC communication, supporting concurrent transaction processing and dynamic resharding using hypergraph partitioning to reduce cross-shard operations",
+        "Built fault tolerance mechanisms including write-ahead logging (WAL), leader election, view change protocols, and automated recovery handling node failures and resumptions while maintaining ACID properties across accounts",
+        "Created performance monitoring and testing framework tracking throughput, latency metrics, and transaction success rates across distributed nodes, with interactive tools for analyzing system state and consensus protocol behavior"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Real Time Transit Tracker",
+      "description": "Developed a full-stack web application that provides real-time tracking of buses and trains using transit feeds, integrating a responsive frontend with a robust backend to deliver up-to-date transit information to users.",
+      "technologies": ["Node.js", "TypeScript", "React", "Tailwind CSS", "MongoDB"],
+      "repository": "https://github.com/yourusername/task-manager",
+      "date": "2024",
+      "highlights": [
+        "Developed a real-time bus and train tracker by utilizing transit feeds to provide users with automated up-to-date information related to vehicle locations, stop data, route information, and arrival times",
+        "Created a clean and responsive frontend using Tailwind CSS, allowing users to search, sort, and customize the presented information. Integrated map plotting to provide a visual representation of routes",
+        "Implemented backend services with Node.js and Express.js to handle API requests, process live feed data from multiple sources, manage user interactions, and store data in MongoDB",
+        "Ensured secure user authentication using JSON Web Tokens to manage user sessions and hashing to protect user data"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Electronic Medical Records Database",
+      "description": "Led the development of a custom Electronic Medical Records (EMR) system to digitize and organize patient records, improving accessibility and efficiency for clinical staff through automated document processing and user-friendly tools.",
+      "technologies": ["Node.js", "TypeScript", "React", "Tailwind CSS", "MongoDB"],
+      "repository": "https://github.com/yourusername/data-viz",
+      "date": "2025",
+      "highlights": [
+        "Led digitization and organization of patient records in a custom EMR system, consolidating thousands of clinical documents to streamline chart retrieval and reduce time-to-access for front-desk and clinical staff",
+        "Built and maintained automated document conversion and extraction processes to produce clean, consolidated patient summaries—improving clinical chart prep and reducing manual data entry for intake and visit workflows",
+        "Managed user accounts, data integrity, and privacy-minded handling of patient information; created admin tools and staff-facing documentation to support onboarding and reduce record lookup errors during appointments"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Password Vault",
+      "description": "Developed a secure password manager which leverages AES encryption and SHA-256 hashing for safeguarding sensitive information. Users can utilize features such as adding, deleting, updating, or looking up password entries.",
+      "technologies": ["Python"],
+      "repository": "https://github.com/yourusername/data-viz",
+      "date": "2023",
+      "highlights": [
+        "Built a secure password manager which leverages AES encryption and SHA-256 hashing for safeguarding sensitive information. Users can utilize features such as adding, deleting, updating, or looking up password entries",
+        "Uses scrypt for key derivation and nonce management, with validation to prevent brute-force attacks & ensure integrity"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "id": 1,
+      "school": "Stony Brook University",
+      "logo": "/sbu-logo.png",
+      "degree": "Bachelor of Science in Computer Science and Applied Mathematics and Statistics",
+      "startDate": "2021",
+      "endDate": "2025",
+      "location": "Stony Brook, New York",
+      "awards": ["🏆 Magna Cum Laude", "Dean's List", "Presidential Scholarship"]
+    },
+    {
+      "id": 2,
+      "school": "Stony Brook University",
+      "logo": "/sbu-logo.png",
+      "degree": "Masters of Science in Computer Science",
+      "startDate": "2025",
+      "endDate": "2026",
+      "location": "Stony Brook, New York",
+      "awards": ["🏆 Cum Laude"]
+    }
+  ],
+  "experience": [
+    {
+      "id": 1,
+      "company": "Microsoft",
+      "location": "Reston, Virginia",
+      "logo": "/msft-logo.png",
+      "roles": [
+        {
+          "position": "Incoming Software Engineer",
+          "startDate": "Jun 2026",
+          "endDate": "Present",
+          "description": "TBD",
+          "responsibilities": [
+            "Cloud Transfer Service"
+          ],
+          "skills": ["C#", "Database", "Caching", "Azure", "Git"]
+        },
+        {
+          "position": "Software Engineering Intern",
+          "startDate": "May 2025",
+          "endDate": "August 2025",
+          "description": "Implemented a deduplication API for cross cloud file transfers in C# for secure government cloud systems.",
+          "responsibilities": [
+            "Developed a high-performance file deduplication system using Redis cache and C#, reducing redundant cloud transfers and improving service efficiency in large-scale Azure environments",
+            "Gained hands-on experience with Microsoft’s internal tools and CI/CD pipelines, including automated testing, Azure cloud, and deployment monitoring"
+          ],
+          "skills": ["C#", "Database", "Caching", "Azure", "Git"]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "company": "United States Federal Government",
+      "location": "Langley, Virginia",
+      "logo": "/company-logo2.png",
+      "roles": [
+        {
+          "position": "Computer Science Intern",
+          "startDate": "May 2024",
+          "endDate": "August 2024",
+          "description": "Did data analysis and created data integration tools to support analytic operations for intelligence purposes.",
+          "responsibilities": [
+            "Successfully developed and deployed robust software applications to support large-scale data processing and analytic operations, resulting in a significant reduction in triage and analysis time",
+            "Created data integration and analysis tools using Python to support cross-referencing between data sets, enhancing targeting and correlation capabilities, resulting in an increase in operational efficiency",
+            "Utilized unique and highly specialized data sets, as well as open-source data, statistical software packages, cloud services, and AI/ML technology to identify patterns and relationships in large volumes of data"
+          ],
+          "skills": ["Python", "Data Analysis"]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "company": "Stony Brook University",
+      "location": "Stony Brook, New York",
+      "logo": "/company-logo2.png",
+      "roles": [
+        {
+          "position": "Graduate Teaching Assistant",
+          "startDate": "May 2025",
+          "endDate": "Present",
+          "description": "Assisting professors in grading, holding office hours, and managing course projects for various computer science courses.",
+          "responsibilities": [
+            "CSE 351: Data Science - Held weekly office hours and graded assignments related to Python and DS (Summer 25)",
+            "CSE 416: Software Engineering - Managed PRs and gave feedback to students on the course project (Fall 25)"
+          ],
+          "skills": [""]
+        },
+        {
+          "position": "Undergraduate Teaching Assistant",
+          "startDate": "August 2023",
+          "endDate": "May 2025",
+          "description": "Assisted professors in grading, holding office hours, and managing course projects for various computer science courses.",
+          "responsibilities": [
+            "IAE 101: Digital Intelligence - Held weekly office hours to assist students with Python projects and discussions (Fall 23)",
+            "CSE 114: Java OOP: Taught two labs per week related to object-oriented programming (Spring 24)",
+            "CSE 220: Systems Fundamentals - Teaching weekly recitations about computer architecture, Assembly, and C (Fall 24)"
+          ],
+          "skills": [""]
+        }
+      ]
+    }
+  ],
+  "courses": [
+    {
+      "id": 1,
+      "department": "CSE",
+      "courseNumber": "101",
+      "name": "Computer Science Principles",
+      "description": "Introduces central ideas of computing and computer science, instills practices of algorithmic and computational thinking, and engages students in the creative aspects of the field. Also introduces appropriate computing technology as a means for solving computational problems and exploring creative endeavors. Includes weekly computer programming assignments, but assumes no previous programming experience.",
+      "semester": "Fall",
+      "year": "2021",
+      "grade": ""
+    },
+    {
+      "id": 2,
+      "department": "CSE",
+      "courseNumber": "214",
+      "name": "Data Structures",
+      "description": "Study of abstract data types including stacks, queues, lists, trees, and graphs. Implementation and analysis of algorithms.",
+      "semester": "Fall",
+      "year": "2021",
+      "grade": ""
+    },
+    {
+      "id": 3,
+      "department": "AMS",
+      "courseNumber": "301",
+      "name": "Finite Mathematical Structures",
+      "description": "Topics include sets, functions, relations, graphs, and combinatorics with applications to computer science.",
+      "semester": "Spring",
+      "year": "2022",
+      "grade": ""
+    },
+    {
+      "id": 4,
+      "department": "PHY",
+      "courseNumber": "131",
+      "name": "Physics I",
+      "description": "Topics include sets, functions, relations, graphs, and combinatorics with applications to computer science.",
+      "semester": "Fall",
+      "year": "2021",
+      "grade": ""
+    }
+  ]
+}
