@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import portfolioData from "@/data/portfolio.json";
