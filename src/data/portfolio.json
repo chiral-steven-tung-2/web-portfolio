@@ -3,7 +3,7 @@
     "name": "Steven Tung",
     "school": "Stony Brook University",
     "zipCode": "11357",
-    "profilePicture": "/profile.png",
+    "profilePicture": "./profile.png",
     "briefDescription": "Computer Science student passionate about building innovative solutions. Pursuing BS/MS at Stony Brook University with experience in cloud and full-stack development.",
     "aboutMe": "I'm a passionate computer science student with a strong foundation in software development and distributed systems. Currently pursuing both a Bachelor's and Master's degree in Computer Science at Stony Brook University, I thrive on solving complex problems and building scalable solutions.",
     "interests": [
@@ -88,7 +88,7 @@
     {
       "id": 1,
       "school": "Stony Brook University",
-      "logo": "/sbu-logo.png",
+      "logo": "./sbu-logo.png",
       "degree": "Bachelor of Science in Computer Science and Applied Mathematics and Statistics",
       "startDate": "2021",
       "endDate": "2025",
@@ -98,7 +98,7 @@
     {
       "id": 2,
       "school": "Stony Brook University",
-      "logo": "/sbu-logo.png",
+      "logo": "./sbu-logo.png",
       "degree": "Masters of Science in Computer Science",
       "startDate": "2025",
       "endDate": "2026",
