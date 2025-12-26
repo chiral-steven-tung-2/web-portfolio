@@ -3,7 +3,7 @@ import portfolioData from "@/data/portfolio.json";
 
 export default function MainPage() {
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-background py-8 px-8">
+    <div className="min-h-screen bg-background py-8 px-8">
       <div className="w-full space-y-8">
         {/* Hero Section */}
         <section className="text-center py-12">

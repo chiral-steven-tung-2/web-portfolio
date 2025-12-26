@@ -84,6 +84,26 @@
       ]
     }
   ],
+  "skills": {
+    "technical": ["Distributed Systems", "Cloud Computing", "Database Design", "System Architecture", "API Development"],
+    "frameworks": ["React", "Node.js", "Express.js", "Tailwind CSS"],
+    "tools": ["Git", "Docker", "MongoDB", "Redis", "Azure"]
+  },
+  "programmingLanguages": ["Python", "JavaScript", "TypeScript", "C#", "C", "Java", "SQL"],
+  "certifications": [
+    {
+      "name": "Example Certification",
+      "issuer": "Example Organization",
+      "date": "2024",
+      "url": "youtube.com"
+    },
+    {
+      "name": "Example Certification",
+      "issuer": "Example Organization",
+      "date": "2024",
+      "url": ""
+    }
+  ],
   "education": [
     {
       "id": 1,
