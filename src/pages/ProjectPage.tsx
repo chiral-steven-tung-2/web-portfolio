@@ -20,7 +20,7 @@ export default function ProjectPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-background py-8 px-8">
+    <div className="min-h-screen bg-background py-8 px-8">
       <div className="w-full">
         <h1 className="text-2xl font-bold text-slate-900 dark:text-foreground mb-8">
           Projects

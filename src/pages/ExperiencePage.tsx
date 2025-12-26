@@ -4,7 +4,7 @@ import portfolioData from "@/data/portfolio.json";
 
 export default function ExperiencePage() {
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-background py-8 px-8">
+    <div className="min-h-screen bg-background py-8 px-8">
       <div className="w-full">
         <h1 className="text-2xl font-bold text-slate-900 dark:text-foreground mb-8">
           Work Experience
@@ -13,14 +13,14 @@ export default function ExperiencePage() {
         {/* Timeline */}
         <div className="relative">
           {/* Vertical line */}
-          <div className="absolute left-2 top-0 bottom-0 w-0.5 bg-slate-300 dark:bg-border"></div>
+          <div className="absolute left-2 top-0 bottom-0 w-0.5 bg-border"></div>
 
           {/* Experience items */}
           <div className="space-y-8">
             {portfolioData.experience.map((exp) => (
               <div key={exp.id} className="relative pl-8">
                 {/* Timeline dot */}
-                <div className="absolute left-0 top-4 w-4 h-4 rounded-full bg-slate-900 dark:bg-foreground border-4 border-slate-50 dark:border-background"></div>
+                <div className="absolute left-0 top-4 w-4 h-4 rounded-full bg-foreground border-4 border-background"></div>
 
                 {/* Company Header */}
                 <div className="mb-3">

@@ -4,7 +4,7 @@ import portfolioData from "@/data/portfolio.json";
 
 export default function ResumePage() {
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-background py-8 px-8">
+    <div className="min-h-screen bg-background py-8 px-8">
       <div className="w-full">
         <div className="flex items-center justify-between mb-8">
           <h1 className="text-2xl font-bold text-slate-900 dark:text-foreground">
