@@ -139,14 +139,14 @@
     {
       "id": 2,
       "company": "United States Federal Government",
-      "location": "Langley, Virginia",
+      "location": "Washington, District of Columbia",
       "logo": "/company-logo2.png",
       "roles": [
         {
           "position": "Computer Science Intern",
           "startDate": "May 2024",
           "endDate": "August 2024",
-          "description": "Did data analysis and created data integration tools to support analytic operations for intelligence purposes.",
+          "description": "Did data analysis and created data integration tools to support analytic operations.",
           "responsibilities": [
             "Successfully developed and deployed robust software applications to support large-scale data processing and analytic operations, resulting in a significant reduction in triage and analysis time",
             "Created data integration and analysis tools using Python to support cross-referencing between data sets, enhancing targeting and correlation capabilities, resulting in an increase in operational efficiency",
@@ -180,11 +180,25 @@
           "description": "Assisted professors in grading, holding office hours, and managing course projects for various computer science courses.",
           "responsibilities": [
             "IAE 101: Digital Intelligence - Held weekly office hours to assist students with Python projects and discussions (Fall 23)",
-            "CSE 114: Java OOP: Taught two labs per week related to object-oriented programming (Spring 24)",
+            "CSE 114: Java OOP - Taught two labs per week related to object-oriented programming (Spring 24)",
             "CSE 220: Systems Fundamentals - Teaching weekly recitations about computer architecture, Assembly, and C (Fall 24)"
           ],
           "skills": [""]
         }
+      ]
+    }
+  ],
+  "courseProjects": [
+    {
+      "id": 1,
+      "title": "Sample Course Project",
+      "description": "Replace this with your actual course project description.",
+      "technologies": ["Technology1", "Technology2"],
+      "repository": "https://github.com/yourusername/data-viz",
+      "date": "2024",
+      "highlights": [
+        "Add your project highlights here",
+        "List key achievements and learnings"
       ]
     }
   ],

@@ -14,6 +14,7 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
     { id: 'education', label: 'Education' },
     { id: 'experience', label: 'Experience' },
     { id: 'projects', label: 'Projects' },
+    { id: 'course-projects', label: 'Course Projects' },
   ];
 
   return (

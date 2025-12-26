@@ -7,6 +7,7 @@ import ResumePage from './pages/ResumePage';
 import EducationPage from './pages/EducationPage';
 import ExperiencePage from './pages/ExperiencePage';
 import ProjectPage from './pages/ProjectPage';
+import CourseProjects from './pages/CourseProjects';
 
 function App() {
   const [activeSection, setActiveSection] = useState('main');
@@ -27,6 +28,8 @@ function App() {
         return <ExperiencePage />;
       case 'projects':
         return <ProjectPage />;
+      case 'course-projects':
+        return <CourseProjects />;
       default:
         return <MainPage />;
     }
