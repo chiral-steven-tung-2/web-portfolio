@@ -8,6 +8,7 @@ import EducationPage from './pages/EducationPage';
 import ExperiencePage from './pages/ExperiencePage';
 import ProjectPage from './pages/ProjectPage';
 import CourseProjects from './pages/CourseProjects';
+import CSDemoPage from './components/CSDemoPage';
 
 function App() {
   const [activeSection, setActiveSection] = useState('main');
@@ -30,6 +31,8 @@ function App() {
         return <ProjectPage />;
       case 'course-projects':
         return <CourseProjects />;
+      case 'cs-demo':
+        return <CSDemoPage />;
       default:
         return <MainPage />;
     }

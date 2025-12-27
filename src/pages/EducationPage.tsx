@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import portfolioData from "@/data/portfolio.json";
 
 export default function EducationPage() {
-  const [selectedDepartment, setSelectedDepartment] = useState<string>("All");
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [flippedCards, setFlippedCards] = useState<Set<number>>(new Set());
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
@@ -22,23 +21,16 @@ export default function EducationPage() {
     });
   };
 
-  // Get unique departments
-  const departments = useMemo(() => {
-    const depts = new Set(portfolioData.courses.map(course => course.department));
-    return ["All", ...Array.from(depts).sort()];
-  }, []);
-
   // Filter and organize courses
   const organizedCourses = useMemo(() => {
     // Filter courses
     const filtered = portfolioData.courses.filter(course => {
-      const matchesDepartment = selectedDepartment === "All" || course.department === selectedDepartment;
       const courseCode = `${course.department} ${course.courseNumber}`;
       const matchesSearch = searchQuery === "" || 
         courseCode.toLowerCase().includes(searchQuery.toLowerCase()) ||
         course.name.toLowerCase().includes(searchQuery.toLowerCase());
       
-      return matchesDepartment && matchesSearch;
+      return matchesSearch;
     });
 
     // Group by department
@@ -60,7 +52,7 @@ export default function EducationPage() {
     });
 
     return grouped;
-  }, [selectedDepartment, searchQuery, sortOrder]);
+  }, [searchQuery, sortOrder]);
 
   const totalCourses = Object.values(organizedCourses).reduce((sum, courses) => sum + courses.length, 0);
 

@@ -1,4 +1,5 @@
 import { Card } from "@/components/ui/card";
+import Terminal from "@/components/Terminal";
 import portfolioData from "@/data/portfolio.json";
 
 export default function MainPage() {
@@ -13,6 +14,14 @@ export default function MainPage() {
           <p className="text-lg text-slate-600 dark:text-muted-foreground">
             {portfolioData.personal.school}
           </p>
+        </section>
+
+        {/* Interactive Terminal */}
+        <section>
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-foreground mb-4">
+            Interactive Terminal
+          </h2>
+          <Terminal />
         </section>
 
         {/* About Me Section */}

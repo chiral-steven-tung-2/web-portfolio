@@ -16,6 +16,7 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
     { id: 'experience', label: 'Experience' },
     { id: 'projects', label: 'Projects' },
     { id: 'course-projects', label: 'Course Projects' },
+    { id: 'cs-demo', label: 'CS Demo' },
   ];
 
   return (
@@ -52,7 +53,7 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
               </svg>
               <Slider
                 value={[hue]}
-                onValueChange={(value) => setHue(value[0])}
+                onValueChange={(value: number[]) => setHue(value[0])}
                 min={0}
                 max={360}
                 step={1}
