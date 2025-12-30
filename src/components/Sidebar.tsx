@@ -5,7 +5,7 @@ export default function Sidebar() {
   const { personal } = portfolioData;
 
   return (
-    <aside className="fixed left-0 top-16 h-[calc(100vh-4rem)] w-64 bg-background dark:bg-card border-r border-border p-6">
+    <aside className="hidden md:block fixed left-0 top-16 h-[calc(100vh-4rem)] w-64 bg-background dark:bg-card border-r border-border p-6">
       <div className="flex flex-col items-center space-y-6">
         {/* Profile Picture */}
         <div className="w-32 h-32 rounded-full overflow-hidden bg-slate-200 dark:bg-accent flex items-center justify-center">

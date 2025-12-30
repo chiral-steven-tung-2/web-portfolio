@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 import { useTheme } from "@/components/ThemeProvider";
+import { useState } from "react";
 
 interface NavbarProps {
   activeSection: string;
@@ -9,13 +10,13 @@ interface NavbarProps {
 
 export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
   const { theme, toggleTheme, hue, setHue } = useTheme();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navItems = [
     { id: 'main', label: 'Home' },
     { id: 'resume', label: 'Resume' },
     { id: 'education', label: 'Education' },
     { id: 'experience', label: 'Experience' },
     { id: 'projects', label: 'Projects' },
-    { id: 'course-projects', label: 'Course Projects' },
     { id: 'cs-demo', label: 'CS Demo' },
   ];
 
@@ -23,11 +24,11 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center space-x-8">
+          <div className="flex items-center space-x-4 md:space-x-8">
             <Button
               variant="ghost"
               onClick={() => onNavigate('main')}
-              className="text-xl font-bold"
+              className="text-lg md:text-xl font-bold"
             >
               Portfolio
             </Button>
@@ -45,9 +46,9 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
             </div>
           </div>
           
-          <div className="flex items-center gap-4 ml-auto">
+          <div className="flex items-center gap-2 ml-auto">
             {/* Color Customization Slider */}
-            <div className="hidden sm:flex items-center gap-2 min-w-[120px]">
+            <div className="hidden lg:flex items-center gap-2 min-w-[120px]">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
               </svg>
@@ -77,8 +78,43 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
                 </svg>
               )}
             </Button>
+
+            {/* Mobile Menu Button */}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="md:hidden"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {isMobileMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </Button>
           </div>
         </div>
+
+        {/* Mobile Menu Dropdown */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden border-t border-border py-2">
+            {navItems.map((item) => (
+              <Button
+                key={item.id}
+                variant={activeSection === item.id ? "default" : "ghost"}
+                onClick={() => {
+                  onNavigate(item.id);
+                  setIsMobileMenuOpen(false);
+                }}
+                className="w-full justify-start mb-1"
+              >
+                {item.label}
+              </Button>
+            ))}
+          </div>
+        )}
       </div>
     </nav>
   );

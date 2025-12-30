@@ -173,12 +173,39 @@ export default function EducationPage() {
             Programming Languages
           </h2>
           <Card className="p-6">
-            <div className="flex flex-wrap gap-3">
-              {portfolioData.programmingLanguages.map((language, index) => (
-                <Badge key={index} variant="outline" className="text-base px-4 py-2 font-medium">
-                  {language}
-                </Badge>
-              ))}
+            <div className="flex flex-wrap gap-3 mb-4">
+              {portfolioData.programmingLanguages.map((language, index) => {
+                const proficiencyColors = {
+                  expert: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 border-green-300 dark:border-green-700',
+                  advanced: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 border-blue-300 dark:border-blue-700',
+                  intermediate: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200 border-yellow-300 dark:border-yellow-700',
+                  beginner: 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200 border-gray-300 dark:border-gray-700'
+                };
+                const colorClass = proficiencyColors[language.proficiency as keyof typeof proficiencyColors] || proficiencyColors.beginner;
+                return (
+                  <Badge key={index} variant="outline" className={`text-base px-4 py-2 font-medium ${colorClass}`}>
+                    {language.name}
+                  </Badge>
+                );
+              })}
+            </div>
+            <div className="flex flex-wrap gap-3 pt-4 border-t border-border">
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                <span className="text-sm text-muted-foreground">Expert</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full bg-blue-500"></div>
+                <span className="text-sm text-muted-foreground">Advanced</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <span className="text-sm text-muted-foreground">Intermediate</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full bg-gray-500"></div>
+                <span className="text-sm text-muted-foreground">Beginner</span>
+              </div>
             </div>
           </Card>
         </section>

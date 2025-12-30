@@ -35,7 +35,7 @@ export function ThemeProvider({
   );
   
   const [hue, setHue] = useState<number>(
-    () => Number(localStorage.getItem("hue")) || 220
+    () => Number(localStorage.getItem("hue")) || 360
   );
 
   useEffect(() => {

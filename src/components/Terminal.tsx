@@ -60,7 +60,7 @@ export default function Terminal() {
     ],
     languages: () => [
       "Programming Languages:",
-      ...portfolioData.programmingLanguages.map((lang) => `  • ${lang}`),
+      ...portfolioData.programmingLanguages.map((lang) => `  • ${typeof lang === 'string' ? lang : lang.name}`),
     ],
     education: () =>
       portfolioData.education.map(

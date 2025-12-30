@@ -307,25 +307,25 @@ export default function MazeVisualization() {
 
   return (
     <div className="space-y-6">
-      <Card className="p-6">
+      <Card className="p-3 md:p-6">
         <div className="space-y-4">
-          <div className="flex flex-wrap gap-4 items-center justify-between">
-            <div className="flex gap-4 items-center">
-              <Button onClick={runAlgorithm} disabled={isRunning} size="lg">
+          <div className="flex flex-wrap gap-2 md:gap-4 items-center">
+            <div className="flex flex-wrap gap-2 md:gap-4 items-center w-full md:w-auto">
+              <Button onClick={runAlgorithm} disabled={isRunning} size="sm" className="flex-1 md:flex-none md:text-base">
                 {isRunning ? "Running..." : `Run ${algorithm.toUpperCase()}`}
               </Button>
-              <Button onClick={clearPath} variant="outline" disabled={isRunning}>
+              <Button onClick={clearPath} variant="outline" disabled={isRunning} size="sm" className="flex-1 md:flex-none">
                 Clear Path
               </Button>
-              <Button onClick={resetMaze} variant="outline" disabled={isRunning}>
-                Reset Maze
+              <Button onClick={resetMaze} variant="outline" disabled={isRunning} size="sm" className="flex-1 md:flex-none">
+                Reset
               </Button>
-              <Button onClick={generateRandomMaze} variant="outline" disabled={isRunning}>
-                Random Maze
+              <Button onClick={generateRandomMaze} variant="outline" disabled={isRunning} size="sm" className="flex-1 md:flex-none">
+                Random
               </Button>
             </div>
 
-            <div className="flex gap-4 items-center flex-wrap">
+            <div className="flex gap-2 md:gap-4 items-center flex-wrap w-full md:w-auto">
               <div className="flex items-center gap-2">
                 <label className="text-sm font-medium">Algorithm:</label>
                 <select
@@ -390,35 +390,37 @@ export default function MazeVisualization() {
 
       <Card className="p-6">
         <h3 className="text-xl font-semibold mb-4">Maze</h3>
-        <div
-          className="inline-block border rounded bg-slate-50 dark:bg-slate-900"
-          onMouseDown={() => setIsDrawing(true)}
-          onMouseUp={() => setIsDrawing(false)}
-          onMouseLeave={() => setIsDrawing(false)}
-        >
-          {maze.map((row, rowIndex) => (
-            <div key={rowIndex} className="flex">
-              {row.map((cell) => {
-                let bgColor = "bg-white dark:bg-slate-800";
-                
-                if (cell.type === "wall") bgColor = "bg-slate-900 dark:bg-slate-200";
-                else if (cell.type === "start") bgColor = "bg-green-500";
-                else if (cell.type === "end") bgColor = "bg-red-500";
-                else if (cell.type === "path") bgColor = "bg-yellow-400";
-                else if (cell.type === "current") bgColor = "bg-purple-500";
-                else if (cell.type === "visited") bgColor = "bg-blue-200 dark:bg-blue-800";
+        <div className="overflow-x-auto">
+          <div
+            className="inline-block border rounded bg-slate-50 dark:bg-slate-900"
+            onMouseDown={() => setIsDrawing(true)}
+            onMouseUp={() => setIsDrawing(false)}
+            onMouseLeave={() => setIsDrawing(false)}
+          >
+            {maze.map((row, rowIndex) => (
+              <div key={rowIndex} className="flex">
+                {row.map((cell) => {
+                  let bgColor = "bg-white dark:bg-slate-800";
+                  
+                  if (cell.type === "wall") bgColor = "bg-slate-900 dark:bg-slate-200";
+                  else if (cell.type === "start") bgColor = "bg-green-500";
+                  else if (cell.type === "end") bgColor = "bg-red-500";
+                  else if (cell.type === "path") bgColor = "bg-yellow-400";
+                  else if (cell.type === "current") bgColor = "bg-purple-500";
+                  else if (cell.type === "visited") bgColor = "bg-blue-200 dark:bg-blue-800";
 
-                return (
-                  <div
-                    key={`${cell.row}-${cell.col}`}
-                    className={`w-6 h-6 border border-slate-200 dark:border-slate-700 cursor-pointer transition-colors ${bgColor}`}
-                    onClick={() => handleCellClick(cell.row, cell.col)}
-                    onMouseEnter={() => handleMouseEnter(cell.row, cell.col)}
-                  />
+                  return (
+                    <div
+                      key={`${cell.row}-${cell.col}`}
+                      className={`w-4 h-4 md:w-6 md:h-6 border border-slate-200 dark:border-slate-700 cursor-pointer transition-colors ${bgColor}`}
+                      onClick={() => handleCellClick(cell.row, cell.col)}
+                      onMouseEnter={() => handleMouseEnter(cell.row, cell.col)}
+                    />
                 );
               })}
             </div>
           ))}
+        </div>
         </div>
 
         <div className="mt-4 flex flex-wrap gap-4 text-sm">

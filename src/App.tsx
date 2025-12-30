@@ -7,7 +7,6 @@ import ResumePage from './pages/ResumePage';
 import EducationPage from './pages/EducationPage';
 import ExperiencePage from './pages/ExperiencePage';
 import ProjectPage from './pages/ProjectPage';
-import CourseProjects from './pages/CourseProjects';
 import CSDemoPage from './components/CSDemoPage';
 
 function App() {
@@ -29,8 +28,6 @@ function App() {
         return <ExperiencePage />;
       case 'projects':
         return <ProjectPage />;
-      case 'course-projects':
-        return <CourseProjects />;
       case 'cs-demo':
         return <CSDemoPage />;
       default:
@@ -43,7 +40,7 @@ function App() {
       <div className="min-h-screen">
         <Navbar activeSection={activeSection} onNavigate={handleNavigate} />
         <Sidebar />
-        <div className="pt-16 pl-64">
+        <div className="pt-16 md:pl-64">
           {renderPage()}
         </div>
       </div>

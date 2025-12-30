@@ -36,9 +36,16 @@ export default function GraphVisualizer({
 
   const handleSvgClick = (e: React.MouseEvent<SVGSVGElement>) => {
     if (editMode === "add-node" && newNodeId.trim()) {
-      const rect = e.currentTarget.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
+      const svg = e.currentTarget;
+      const rect = svg.getBoundingClientRect();
+      
+      // Calculate the scale factor between the rendered size and viewBox
+      const scaleX = 650 / rect.width;
+      const scaleY = 300 / rect.height;
+      
+      // Convert screen coordinates to SVG viewBox coordinates
+      const x = (e.clientX - rect.left) * scaleX;
+      const y = (e.clientY - rect.top) * scaleY;
 
       if (!graph.nodes[newNodeId]) {
         const newGraph = { ...graph };
@@ -82,9 +89,20 @@ export default function GraphVisualizer({
 
   const handleMouseMove = (e: React.MouseEvent<SVGSVGElement>) => {
     if (draggingNode && editMode === "view") {
-      const rect = e.currentTarget.getBoundingClientRect();
-      const x = Math.max(30, Math.min(620, e.clientX - rect.left));
-      const y = Math.max(30, Math.min(270, e.clientY - rect.top));
+      const svg = e.currentTarget;
+      const rect = svg.getBoundingClientRect();
+      
+      // Calculate the scale factor between the rendered size and viewBox
+      const scaleX = 650 / rect.width;
+      const scaleY = 300 / rect.height;
+      
+      // Convert screen coordinates to SVG viewBox coordinates
+      const svgX = (e.clientX - rect.left) * scaleX;
+      const svgY = (e.clientY - rect.top) * scaleY;
+      
+      // Clamp to viewBox bounds
+      const x = Math.max(30, Math.min(620, svgX));
+      const y = Math.max(30, Math.min(270, svgY));
 
       const newGraph = { ...graph };
       newGraph.nodes[draggingNode].x = x;
@@ -127,10 +145,10 @@ export default function GraphVisualizer({
 
   return (
     <div className="space-y-4">
-      <Card className="p-6">
+      <Card className="p-3 md:p-6">
         <h4 className="text-sm font-semibold mb-3">Graph Editor</h4>
-        <div className="flex flex-wrap gap-3 items-center">
-          <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2 md:gap-3 items-center">
+          <div className="flex gap-2 w-full sm:w-auto">
             <Button
               variant={editMode === "view" ? "default" : "outline"}
               size="sm"
@@ -139,6 +157,7 @@ export default function GraphVisualizer({
                 setSelectedNodeForEdge(null);
               }}
               disabled={isRunning}
+              className="flex-1 sm:flex-none text-xs md:text-sm"
             >
               View/Drag
             </Button>
@@ -150,6 +169,7 @@ export default function GraphVisualizer({
                 setSelectedNodeForEdge(null);
               }}
               disabled={isRunning}
+              className="flex-1 sm:flex-none text-xs md:text-sm"
             >
               Add Node
             </Button>
@@ -161,6 +181,7 @@ export default function GraphVisualizer({
                 setSelectedNodeForEdge(null);
               }}
               disabled={isRunning}
+              className="flex-1 sm:flex-none text-xs md:text-sm"
             >
               Add Edge
             </Button>
@@ -207,15 +228,16 @@ export default function GraphVisualizer({
 
       <Card className="p-6">
         <h3 className="text-xl font-semibold mb-4">Graph</h3>
-        <svg
-          width="650"
-          height="300"
-          className="border rounded bg-slate-50 dark:bg-slate-900 cursor-pointer"
-          onClick={handleSvgClick}
-          onMouseMove={handleMouseMove}
-          onMouseUp={() => setDraggingNode(null)}
-          onMouseLeave={() => setDraggingNode(null)}
-        >
+        <div className="overflow-x-auto">
+          <svg
+            viewBox="0 0 650 300"
+            className="border rounded bg-slate-50 dark:bg-slate-900 cursor-pointer w-full max-w-full h-auto"
+            style={{ minWidth: "300px" }}
+            onClick={handleSvgClick}
+            onMouseMove={handleMouseMove}
+            onMouseUp={() => setDraggingNode(null)}
+            onMouseLeave={() => setDraggingNode(null)}
+          >
           {/* Edges */}
           {graph.edges
             .filter(
@@ -384,6 +406,7 @@ export default function GraphVisualizer({
             );
           })}
         </svg>
+        </div>
 
         <div className="mt-4 flex flex-wrap gap-4 text-sm">
           <div className="flex items-center gap-2">

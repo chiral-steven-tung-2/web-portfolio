@@ -275,7 +275,8 @@ export default function PaxosVisualization() {
 
       <Card className="p-6">
         <h3 className="text-xl font-semibold mb-4">Paxos Network</h3>
-        <svg width="700" height="280" className="border rounded bg-slate-50 dark:bg-slate-900">
+        <div className="overflow-x-auto">
+          <svg viewBox="0 0 700 280" className="border rounded bg-slate-50 dark:bg-slate-900 w-full max-w-full h-auto" style={{ minWidth: "300px" }}>
           {/* Messages */}
           {messages.map((msg, idx) => {
             const from = servers.find((s) => s.id === msg.from);
@@ -372,6 +373,7 @@ export default function PaxosVisualization() {
             </g>
           ))}
         </svg>
+        </div>
 
         <div className="mt-4 flex flex-wrap gap-4 text-sm">
           <div className="flex items-center gap-2">

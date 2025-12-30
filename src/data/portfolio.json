@@ -89,7 +89,15 @@
     "frameworks": ["React", "Node.js", "Express.js", "Tailwind CSS"],
     "tools": ["Git", "Docker", "MongoDB", "Redis", "Azure"]
   },
-  "programmingLanguages": ["Python", "JavaScript", "TypeScript", "C#", "C", "Java", "SQL"],
+  "programmingLanguages": [
+    { "name": "Python", "proficiency": "expert" },
+    { "name": "JavaScript", "proficiency": "expert" },
+    { "name": "TypeScript", "proficiency": "expert" },
+    { "name": "C#", "proficiency": "intermediate" },
+    { "name": "C", "proficiency": "intermediate" },
+    { "name": "Java", "proficiency": "intermediate" },
+    { "name": "SQL", "proficiency": "advanced" }
+  ],
   "certifications": [
     {
       "name": "Example Certification",
@@ -205,20 +213,6 @@
           ],
           "skills": [""]
         }
-      ]
-    }
-  ],
-  "courseProjects": [
-    {
-      "id": 1,
-      "title": "Sample Course Project",
-      "description": "Replace this with your actual course project description.",
-      "technologies": ["Technology1", "Technology2"],
-      "repository": "https://github.com/yourusername/data-viz",
-      "date": "2024",
-      "highlights": [
-        "Add your project highlights here",
-        "List key achievements and learnings"
       ]
     }
   ],
